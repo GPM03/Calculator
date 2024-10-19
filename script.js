@@ -116,6 +116,7 @@ function operate() {
         }
 
         if (typeof result === "number") {
+            result = result.toPrecision(5);
             display.textContent = result;
         } else {
             display.textContent = result;
@@ -179,7 +180,7 @@ function percentToDecimal(num) {
 }
 
 function expressionHistory(a = numA, b = numB, operator = currentOperator, evaluation = result) {
-    console.log( `${a} ${operator} ${b} = ${result}`);
+    console.log( `${a} ${operator} ${b} = ${evaluation}`);
     
 }
 
