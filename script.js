@@ -116,8 +116,13 @@ function operate() {
         }
 
         if (typeof result === "number") {
-            result = result.toPrecision(5);
+            if (result > 1e+20 || result < 1e-20){
+                result = result.toExponential(5);
+            } else {
+                result = Math.round(result * 100000) / 100000;
+            }
             display.textContent = result;
+            
         } else {
             display.textContent = result;
         }
