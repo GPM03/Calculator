@@ -1,0 +1,136 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #294353
+}
+
+* {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    width: 54vh; /* 90vh * 0.6 */
+    height: 90vh;
+    margin: 5vh auto 0 auto;
+}
+
+.display-container {
+    display: block;
+    background-color: #1c2d38;
+    width: 100%;
+    height: 30%;
+    border-radius: 2vh 2vh 0 0;
+    padding: 0 1rem;
+    text-align: right;
+}
+
+.display {
+    display: block;
+    font-size: 500%;
+    overflow: auto;
+    text-wrap: nowrap;
+    line-height: 27vh; /* 90vh * 0.3 */
+    color: white;
+    
+    
+}
+
+.button-container {
+    display: flex;
+    background-color: #0d1419;
+    width: 100%;
+    height: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 0 0 2vh 2vh;
+    gap: 1.5% 2.5%;
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    width: 21%; /* button height * (container height / container width) */
+    height: 18%; /* button width / (container height / container width) */
+    border-radius: 100%;
+
+    
+}
+
+.button-text {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 200%;
+
+}
+
+.pointer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+
+}
+
+.clear {
+    background-color: #4a4263;
+}
+
+.operator {
+    background-color: #374955;
+
+}
+
+
+.equals {
+    background-color: #004c6b;
+
+}
+
+.digit {
+    background-color: #121d24;
+
+}
+
+.selected {
+    border: 3px solid white;
+}
+
+.delete-icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    fill: white;
+}
+
+.button-animation {
+    animation-name: button-animation;
+    animation-duration: 1s;
+}
+
+@keyframes button-animation {
+    0% {
+        background-color: rgba(255, 255, 255, 0); 
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.20); 
+        width: 200%;
+        height: 200%;
+        border-radius: 100%;
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0); 
+        width: 200%;
+        height: 200%;
+        border-radius: 100%;
+    }
+}
